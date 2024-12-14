@@ -7,7 +7,7 @@
 import React from "react";
 import { PlaceholdersAndVanishInput } from "@/components/ui/Input";
 import Image from "next/image";
-import { FaInfoCircle, FaSpinner } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 
 type Response = {
   name: string;
