@@ -53,7 +53,7 @@ export function VanishInput() {
     }
     setError("");
     fetch(
-      `${process.env.NEXT_PUBLIC_WEATHER_API_URL}weather?q=${city}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
