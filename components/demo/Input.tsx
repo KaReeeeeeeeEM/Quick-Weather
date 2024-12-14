@@ -57,12 +57,10 @@ export function VanishInput() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setError("Failed to fetch weather data");
         setLoading(false);
       });
