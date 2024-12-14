@@ -106,7 +106,7 @@ export function VanishInput() {
             </p>
             <p className="py-1 px-2 rounded-md hover:cursor-pointer hover:bg-primary-100 hover:w-full text-left md:text-right mb-1">
               <span className="font-bold">Temperature:</span>{" "}
-              <span className="italic">{data.main.temp}°C</span>
+              <span className="italic">{parseFloat((data.main.temp - 273.15).toString()).toFixed(1)}°C</span>
             </p>
             <p className="py-1 px-2 rounded-md hover:cursor-pointer hover:bg-primary-100 hover:w-full text-left md:text-right mb-1">
               <span className="font-bold">Humidity:</span>{" "}
@@ -122,11 +122,11 @@ export function VanishInput() {
             </p>
             <p className="py-1 px-2 rounded-md hover:cursor-pointer hover:bg-primary-100 hover:w-full text-left md:text-right mb-1">
               <span className="font-bold">Sunrise:</span>{" "}
-              <span className="italic">{data.sys.sunrise}</span>
+              <span className="italic">{new Date(data.sys.sunrise * 1000).toLocaleString()}</span>
             </p>
             <p className="py-1 px-2 rounded-md hover:cursor-pointer hover:bg-primary-100 hover:w-full text-left md:text-right mb-1">
               <span className="font-bold">Sunset:</span>{" "}
-              <span className="italic">{data.sys.sunset}</span>
+              <span className="italic">{new Date(data.sys.sunset * 1000).toLocaleString() }</span>
             </p>
             <p className="py-1 px-2 rounded-md hover:cursor-pointer hover:bg-primary-100 hover:w-full text-left md:text-right mb-1">
               <span className="font-bold">Weather:</span>{" "}
