@@ -1,6 +1,5 @@
-// Function to convert country codes to country names
-export default function getCountryName(code: string) {
-  const countryMapping = {
+export default function getCountryName(code: string): string {
+  const countryMapping: Record<string, string> = {
     AF: "Afghanistan",
     AL: "Albania",
     DZ: "Algeria",
