@@ -45,7 +45,7 @@ Before running the project, ensure you have the following installed on your syst
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/quick-weather.git
+   git clone https://github.com/KaReeeeeeeeEM/quick-weather.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -56,6 +56,8 @@ Before running the project, ensure you have the following installed on your syst
    npm install
    # or
    yarn install
+   # or
+   pnpm install
    ```
 
 ### Running the Application
@@ -64,6 +66,8 @@ Before running the project, ensure you have the following installed on your syst
    npm run dev
    # or
    yarn dev
+   # or
+   pnpm run dev
    ```
 2. Open your browser and navigate to:
    ```
@@ -76,15 +80,16 @@ Before running the project, ensure you have the following installed on your syst
 The project follows a standard Next.js folder structure:
 ```
 quick-weather/
-├── public/            # Static files
-├── src/
-│   ├── components/    # Reusable React components
-│   ├── pages/         # Next.js pages
-│   ├── styles/        # CSS files
-│   ├── utils/         # Helper functions
-├── .env.local         # Environment variables
-├── next.config.js     # Next.js configuration
-├── package.json       # Project dependencies
+├── public/         # Static files
+├── app/
+├── components/     # Reusable React components
+│   ├── ui/         # Styled component files
+│   ├── demo/       # Usable component functions
+├── data            # Data required for the project
+├── lib             # utilities required for the project
+├── .env.local      # Environment variables
+├── next.config.js  # Next.js configuration
+├── package.json    # Project dependencies
 ```
 
 ---
@@ -92,7 +97,7 @@ quick-weather/
 ## Environment Variables
 To run the application, configure the following environment variables in a `.env.local` file:
 ```env
-NEXT_PUBLIC_WEATHER_API_KEY=<your_openweather_api_key>
+NEXT_PUBLIC_OPENWEATHERSTREET_API_KEY=<your_openweather_api_key>
 NEXT_PUBLIC_WEATHER_API_URL=https://api.openweathermap.org/data/2.5/
 ```
 Replace `<your_openweather_api_key>` with your OpenWeather API key.
@@ -107,7 +112,7 @@ Example API call:
 ```javascript
 const fetchWeather = async (city) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_WEATHER_API_URL}weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&units=metric`
+    `${process.env.NEXT_PUBLIC_WEATHER_API_URL}weather?q=${city}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERSTREET_API_KEY}&units=metric`
   );
   const data = await response.json();
   return data;
